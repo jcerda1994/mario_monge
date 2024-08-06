@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a[href] {
+  color: #000;
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+.navbar {
+  margin-top: 50px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .nav-item {
+      position: relative;
+      display: inline-block;
+      margin-left: 20px;
+      margin-right: 20px;
+      text-decoration: none;
+      transition: opacity 0.3s;
+
+      &.active {
+        font-weight: 700;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 25px;
+          height: 2px;
+          background-color: #000;
+        }
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-item {
+      margin: 10px 0;
+    }
+  }
+}
+
+.hero {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-wrapper {
+    width: 100%;
+    max-width: 800px; /* Maximum width for better readability */
+    margin: 0 auto; /* Center horizontally */
+
+    .title {
+      font-size: 36px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px; /* Space below the description */
+    }
+
+    .contact-links {
+      padding: 0;
+      margin: 0;
+      list-style: none; /* Elimina los bullets de la lista */
+      display: flex;
+      justify-content: center; /* Centra el contenido de la lista */
+      align-items: center;
+      flex-direction: column; /* Alinea verticalmente */
+
+      .contact-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .contact-link {
+          display: flex;
+          align-items: center;
+          color: #000; /* Cambia el color del texto según sea necesario */
+          text-decoration: none;
+          font-size: 18px;
+
+          i {
+            font-size: 24px; /* Tamaño del icono */
+            margin-right: 10px; /* Espacio entre el icono y el texto */
+            color: #e4405f; /* Color del icono de Instagram */
+          }
+
+          &:hover {
+            color: #e4405f; /* Cambia el color del texto en hover */
+            text-decoration: underline; /* Subraya el texto en hover */
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .text-wrapper {
+      width: 70%;
+
+      .title {
+        font-size: 48px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .text-wrapper {
+      width: 60%;
+    }
+  }
+}
